@@ -1,0 +1,165 @@
+title Using a mind-control helmet
+author Mark Staun Poulsen
+homepage www.puzzlescript.net
+
+========
+OBJECTS
+========
+
+Background 
+GREEN  
+
+Target 
+DarkBlue White   
+.....
+.000.
+.000.
+.000.
+.....
+
+Wall 
+BROWN
+
+Player1 
+Blue White
+.010.
+.000.
+00000
+.000.
+.0.0.
+
+Player2
+Blue White
+.010.
+.000.
+00000
+.000.
+.0.0.
+
+Player3
+Blue White
+.010.
+.000.
+00000
+.000.
+.0.0.
+
+Avatar1
+Blue
+.000.
+.000.
+00000
+.000.
+.0.0.
+
+Avatar2
+Blue
+.000.
+.000.
+00000
+.000.
+.0.0.
+
+Avatar3
+Blue
+.000.
+.000.
+00000
+.000.
+.0.0.
+
+Crate 
+Orange 
+
+MindControlHelmet
+yellow
+
+=======
+LEGEND
+=======
+
+. = Background
+# = Wall
+Avatar = Avatar1 or Avatar2 or Avatar3
+Player = Player1 or Player2 or Player3
+1 = Player1
+2 = Player2
+3 = Player3
+A = Avatar1
+B = Avatar2
+C = Avatar3
+* = Crate
+@ = Crate and Target
+O = Target
+H = MindControlHelmet
+
+=======
+SOUNDS
+=======
+
+================
+COLLISIONLAYERS
+================
+
+Background
+Target
+MindControlHelmet
+Player, Wall, Crate, Avatar
+
+======
+RULES     
+======     
+
+[ >  Player | Crate ] -> [  >  Player | > Crate  ]
+
+[ >  Player | Crate | Crate ] -> [  >  Player | > Crate | > Crate ]
+
+[ >  Player | MindControlHelmet] [ Avatar1 ] [ Avatar2 ] [ Avatar3 ] -> [  > Avatar1 | MindControlHelmet ] [ Player1 ] [ Player2 ] [ Player3 ]
+
+[ >  Player | MindControlHelmet] [ Avatar1 ] [ Avatar2 ] -> [  > Avatar1 | MindControlHelmet ] [ Player1 ] [ Player2 ]
+
+==============
+WINCONDITIONS
+==============
+
+All Target on Crate  
+
+=======     
+LEVELS
+=======
+###########
+#..#..##..#
+#..*...#..#
+#..#.1.#.2#
+#..#o*o#..#
+#..#...#..#
+#3.#...*..#
+#..##..#..#
+###########
+
+########
+#h#...##
+#.#...##
+#.#b*.##
+#.##o###
+#.#a*.##
+#.#.o..#
+#1#....#
+########
+
+####a.....#.................##########
+#...#####.#.*...............#........b
+..#....#..######.......######..#######
+.#####...#.....#...o...#...#..#...#...
+......####.*...#.......#.#...#.*#...#.
+##..#...#.....o#.......#..###.....#...
+#..#..#...#.#.##...c...##.......#...#.
+#....#..#......#.......########o..#...
+###....#..####.#.......#.......#....#.
+...###...#.....#...o...#.#####.######.
+.#....###..#####.....*.#.....#....#...
+.####.....#....#.......#####..###.#.##
+.#...######.#.*#########...##.#...#...
+.#.#..#.....#.....oo.*...#....#.#####.
+...#.....###.############.#####.......
+##########..1......h..........########
